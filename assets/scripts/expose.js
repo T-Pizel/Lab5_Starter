@@ -7,7 +7,7 @@ function init() {
   const hornSelect = document.getElementById('horn-select');
   const volumeSlider = document.getElementById('volume');
   const volumeIcon = document.querySelector('#volume-controls img');
-  const audio = document.querySelector('audio');
+  const audioElement = document.querySelector('audio');
   const hornIcon = document.querySelector('#expose img');
   const playButton = document.querySelector('button');
 
@@ -20,12 +20,12 @@ function init() {
     }
 
     hornIcon.src = `assets/images/${currHorn}.svg`;
-    audio.src = `assets/audio/${currHorn}.mp3`;
+    audioElement.src = `assets/audio/${currHorn}.mp3`;
   });
 
   volumeSlider.addEventListener('input', function(){
     const volumeValue = parseInt(volumeSlider.value);
-    audio.volume = volumeValue/100;
+    audioElement.volume = volumeValue/100;
 
     if(volumeValue === 0){
       volumeIcon.src = "./assets/icons/volume-level-0.svg";
@@ -48,7 +48,7 @@ function init() {
       return;
     }
 
-    audio.play().catch(error =>{
+    audioElement.play().catch(error =>{
       console.log('error:', error);
     });
 
@@ -58,5 +58,5 @@ function init() {
   });
 
   volumeIcon.src = "./assets/icons/volume-level-2.svg";
-  audio.volume = 0.5;
+  audioElement.volume = 0.5;
 }

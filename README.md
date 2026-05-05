@@ -8,3 +8,4 @@
 
 # GitHub Links
 - expose.html: https://T-Pizel.github.io/Lab5_Starter/expose.html
+- explore.html: https://T-Pizel.github.io/Lab5_Starter/explore.html
